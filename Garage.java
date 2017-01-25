@@ -12,4 +12,12 @@
  */
 public class Garage {
 
+    private final Vehicule[] vehicules = new Vehicule[10];
+
+
+
+    public void addVehicule(Vehicule veh) {
+
+    }
+    //vehicules[i] = clio;
 }

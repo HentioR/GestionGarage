@@ -5,32 +5,33 @@
  */
 
 
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  *
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
 public class Vehicule {
-    public String modeleVehicule;
+    private static final AtomicInteger ID_COUNTER = new AtomicInteger(0);
+
+    public final String modeleVehicule;
     public String couleurVehicule;
-    public int idVehicule;
+    public final int idVehicule;
     public boolean panneVehicule;
 
 
     public Vehicule(){
 //        System.out.println("Création d'une voiture");
-        modeleVehicule = "Inconnu";
-        couleurVehicule = "Inconnu";
-        idVehicule = 1;
+        this("Inconnu","Inconnu", false);
+
     }
 
-    public Vehicule(String modele, String couleur, int ident, boolean panne){
+    public Vehicule(String modele, String couleur, boolean panne){
 //        System.out.println("Création d'une voiture avec paramétres...");
         modeleVehicule = modele;
         couleurVehicule = couleur;
-        idVehicule = ident;
+        idVehicule = ID_COUNTER.incrementAndGet();
         panneVehicule = panne;
-
     }
 
     public String getModele(){
@@ -39,10 +40,6 @@ public class Vehicule {
 
     public String getCouleur(){
         return couleurVehicule;
-    }
-
-    public int getId(){
-        return idVehicule;
     }
 
     public String getEtat(){

@@ -18,18 +18,40 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        String[] options = { "Garage", "Ajouter une voiture", "Supprimer une voiture"};
         System.out.println("--------------------\n       MENU \n--------------------");
-        System.out.println("1 - Garage");
-        System.out.println("2 - Ajouter une voiture");
+        int p = 1;
+        for(String op : options) {
+            System.out.println(p +")" + op);
+            p++;
+        }
 
-        Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine();
-        System.out.println("Vous avez saisi : "+ str);
 
-        Vehicule clio = new Vehicule("Clio", "Verte", 1, false );
 
-//        if
 
+
+
+
+
+
+
+
+
+
+//        Scanner home = new Scanner(System.in);
+//        Scanner sc = new Scanner(System.in);
+//        String str = sc.nextLine();
+//        System.out.println("Vous avez saisi : "+ str);
+//
+        for (int i = 0; i < 10; i++) {
+            Vehicule clio = new Vehicule("Clio", "Verte", false );
+            // System.out.println(clio.idVehicule);
+        }
+        //
+
+//
+//        if(String home)
+//
 //	System.out.println("Sous menu 3 : tapez 3");
 //       System.out.println("Modéle : "+clio.getModele()+"\nCouleur : "+clio.getCouleur()+"\nIdentifiant : "+clio.getId()+"\nEtat : "+clio.getEtat());
 
